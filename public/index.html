@@ -1,0 +1,122 @@
+<html>
+    <title></title>
+    <style>
+        body{
+            padding: 10px;
+            margin: 0;
+            overflow: hidden;
+            -webkit-user-select: none;
+        }
+        .body{
+            height: 95%;
+            margin-bottom: 10px;
+        }
+        .main-img-panel{
+            float: left;
+            width: 80%;
+            height: 100%;
+            padding-right: 10px;
+            -webkit-box-sizing: border-box;
+        }
+        .img-panel{
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            border: 1px solid #EDEDED;
+            background-color: #EFEFEF;
+        }
+        .img-panel > div{
+            display: inline-block;
+            position: relative;
+        }
+        .img-panel > div > img{
+            display: block
+        }
+        .img-panel > div > canvas{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .button-right{
+            position: relative;
+            float: left;
+            width: 20%;
+            height: 100%;
+            padding-top: 10px;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+        }
+        .button-right > div{
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            -webkit-box-sizing: border-box;
+        }
+        .button-right > .btn-bottom{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+        .button-right button{
+            
+        }
+        .button-right .btn-crop{
+            width: 100%;
+            height: 100px;
+        }
+        .button-right > div > button
+        {
+            width: 100%;
+            height: 50px;
+            background-color: #FFF;
+            border: 1px solid #EDEDED;
+            line-height: 50px;
+        }
+    </style>
+<body>
+    <div class="body">
+        <div class="main-img-panel">
+            <div class="img-panel">
+                <div>
+                    <img src="" id="img">
+                    <canvas id="canvas"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="button-right">
+            <div>
+                <button onclick="EntryPoint.input()">Input Folder</button>
+            </div>
+            <div>
+                <button onclick="EntryPoint.output()">Output Folder</button>
+            </div>
+            <div>
+                <button onclick="EntryPoint.increase()">2X</button>
+            </div>
+            <div>
+                <button onclick="EntryPoint.decrease()">0.5X</button>
+            </div>
+            <div>
+                <button onclick="EntryPoint.prev()">PREV</button>
+            </div>
+            <div>
+                <button onclick="EntryPoint.next()">NEXT</button>
+            </div>
+            <div class="btn-bottom">
+                <button class="btn-crop" onclick="EntryPoint.crop()">CROP</button> 
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        
+        <div style="float: left; margin-left: 10px">
+            <label>Input : </label><label id="input-path"></label>
+            <label>Output : </label><label id="output-path"></label>
+        </div>
+        <div style="float: right; margin-right: 180px">
+            <input type="number" id="pic-id" style="width: 80px; margin-right: 10px"><button onclick="EntryPoint.jump()">Jump</button>
+        </div>
+    </div>
+    <script src="./js/bundle.js"></script>
+</body>
+</html>
